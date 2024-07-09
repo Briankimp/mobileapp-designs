@@ -3,8 +3,7 @@ import { CalendarDays } from "lucide-react";
 import ImageCarousel from "@/components/ui/image-carousel";
 import { ChevronLeft } from "lucide-react";
 
-interface PageProps {
-}
+interface PageProps {}
 
 const Page: React.FC<PageProps> = (props) => {
   // random image urls
@@ -18,7 +17,7 @@ const Page: React.FC<PageProps> = (props) => {
   ];
 
   return (
-    <main className="flex flex-col pt-11 px-8">
+    <main className="flex flex-col pt-11 px-8 w-full">
       <div>
         <ChevronLeft />
       </div>
@@ -26,7 +25,7 @@ const Page: React.FC<PageProps> = (props) => {
         <CalendarDays size={24} className="text-blue-200" />
         <p className="text-sm text-black">05/06/2024</p>
       </div>
-      <div className="flex max-w-[366px] h-[200px] mt-10">
+      <div className="mt-10">
         <ImageCarousel imageUrls={imageUrls} />
       </div>
     </main>
