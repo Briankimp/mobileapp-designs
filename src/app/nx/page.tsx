@@ -2,12 +2,14 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className="bg-white shadow rounded-[30px]">
-      <h1 className="text-2xl font-bold">Welcome to My Next.js App</h1>
-      <p>This content is centered with a max width of 768px.</p>
-    </div>
+    <>
+      <div className="px-8">
+        <div className="bg-blue-100 shadow rounded-[30px] ">
+          <h1>This is the homepage. It will contain listings/ads</h1>
+        </div>
+      </div>
+    </>
   );
 };
 
 export default HomePage;
- 
