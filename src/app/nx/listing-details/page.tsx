@@ -3,7 +3,6 @@ import { CalendarDays } from "lucide-react";
 import ImageCarousel from "@/components/ui/image-carousel";
 
 interface PageProps {
-  // Define your props here
 }
 
 const Page: React.FC<PageProps> = (props) => {
