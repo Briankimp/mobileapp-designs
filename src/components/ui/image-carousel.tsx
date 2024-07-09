@@ -1,23 +1,21 @@
-import React from "react";
-import { Carousel } from "antd";
-import Image from "next/image";
 
-interface ImageCarouselProps {
-  imageUrls: string[];
+"use client";
+
+import React from 'react';
+import { Carousel } from 'antd';
+
+interface ImageCarouselProps{
+  imageUrls: string[]
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = (props) => {
-  return (
-    <>
-      <Carousel arrows infinite={false} className="flex">
-        {props.imageUrls.map((url) => (
-          <div key={url}>
-            <Image src={url} alt="carousel image" width={366} height={200} />
-          </div>
-        ))}
-      </Carousel>
-    </>
-  );
-};
+const App: React.FC<ImageCarouselProps> = ({ imageUrls }) => (
+  <Carousel effect="fade">
+    {imageUrls.map((url, index)=>(
+      <div key={index} className='h-[200px] w-366px bg-gray-800 flex items-center justify-center'>
+        <Image src={url} alt={`Slide ${index + 1}`} className='h-full w-full object-cover' />
+      </div>
+    ))}
+  </Carousel>
+);
 
-export default ImageCarousel;
+export default App;
