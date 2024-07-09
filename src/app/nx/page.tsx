@@ -1,4 +1,3 @@
-// app/nx/page.tsx
 import React from "react";
 
 const HomePage = () => {
@@ -11,3 +10,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+ 
