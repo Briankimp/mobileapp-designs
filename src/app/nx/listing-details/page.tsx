@@ -8,6 +8,10 @@ import { Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import WhatsappIcon from "@/components/ui/WhatsappIcon";
+import CaretakerIcon from "@/components/ui/CaretakerIcon";
+import ElectricityIcon from "@/components/ui/ElectricityIcon";
+import WaterIcon from "@/components/ui/WaterIcon";
+import KitchenIcon from "@/components/ui/KitchenIcon";
 
 
 interface PageProps {}
@@ -28,10 +32,12 @@ const Page: React.FC<PageProps> = (props) => {
       <div>
         <ChevronLeft />
       </div>
+
       <div className=" flex items-center justify-end gap-2">
         <CalendarDays size={24} className="text-blue-200" />
         <p className="text-sm text-black">05/06/2024</p>
       </div>
+
       <div className="relative mt-10 justify-center items-center">
         <img 
           src="https://i.pinimg.com/236x/68/58/e0/6858e0446ac801dbdc950befd2efb8af.jpg" 
@@ -61,43 +67,43 @@ const Page: React.FC<PageProps> = (props) => {
             <p>8</p>
             <Heart />
           </div>
-          <Share2 />
+          <Share2 color="#3d53ad"/>
         </div>
       </div>
 
       <div className="flex flex-row justify-between mt-[20px]">
         <div className="flex flex-col">
-          <p>Guest</p>
+          <p className="text-gray-500">Guest</p>
           <div className="flex flex-row gap-2">
-            <UsersRound />
+            <UsersRound color="#3d53ad"/>
             <p>2</p>
           </div>
         </div>
         <div className="flex flex-col">
-          <p>Bedroom</p>
+          <p className="text-gray-500">Bedroom</p>
           <div className="flex flex-row gap-2">
-            <BedDouble />
+            <BedDouble color="#3d53ad"/>
             <p>2</p>
           </div>
         </div>
         <div className="flex flex-col">
-          <p>Bed</p>
+          <p className="text-gray-500">Bed</p>
           <div className="flex flex-row gap-2">
-            <BedDouble />
+            <BedDouble color="#3d53ad"/>
             <p>2</p>
           </div>
         </div>
         <div className="flex flex-col">
-          <p>Bathroom</p>
+          <p className="text-gray-500">Bathroom</p>
           <div className="flex flex-row gap-2">
-          <Bath />
+          <Bath color="#3d53ad"/>
             <p>2</p>
           </div>
         </div>
         <div className="flex flex-col">
-          <p>Kitchen</p>
+          <p className="text-gray-500">Kitchen</p>
           <div className="flex flex-row gap-2">
-            <Utensils />
+            <Utensils color="#3d53ad"/>
             <p>2</p>
           </div>
         </div>
@@ -105,11 +111,11 @@ const Page: React.FC<PageProps> = (props) => {
 
       <div className="flex flex-row justify-between mt-[20px]">
         <div>
-          <p className="font-medium text-xs text-gray text-opacity-0">Property Type</p>
+          <p className="font-medium text-xs text-gray-500 ">Property Type</p>
           <p className="font-medium text-sm">Apartment</p>
         </div>
         <div>
-          <p className="font-medium text-xs text-gray text-opacity-0">Uploaded By:</p>
+          <p className="font-medium text-xs text-gray-500 ">Uploaded By:</p>
           <p className="font-medium text-sm">Landlord's Name</p>
         </div>
         <button className="flex rounded-[90px] flex-row bg-green-100 w-[133px] h-[34] items-center justify-center text-white gap-3 text-black">
@@ -124,11 +130,11 @@ const Page: React.FC<PageProps> = (props) => {
       </div>
 
       <div className=" my-[20px]">
-        <Divider className="h-[1px] bg-black text-opacity-0"/>
+        <Divider className="h-[1px] bg-gray-400 text-opacity-0"/>
       </div>
 
       <div className=" my-[20px]">
-        <p>Preferences</p>
+        <p className="text-gray-500 text-sm font-normal">Description</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
            Totam sapiente ipsam nobis accusamus blanditiis, magni labore
             aperiam voluptatibus, sit velit dignissimos 
@@ -137,31 +143,31 @@ const Page: React.FC<PageProps> = (props) => {
       </div>
 
       <div className="flex flex-col justify-start items-start gap-6  my-[20px]">
-        <p>Amenities</p>
+        <p className="text-gray-500 text-sm font-normal">Amenities</p>
         <div className="flex flex-row gap-3">
-          <Droplets />
+          <WaterIcon />
           <p>Water</p>
         </div>
         <div className="flex flex-row gap-3">
-          <Cable />
+          <ElectricityIcon />
           <p>Electricity</p>
         </div>
         <div className="flex flex-row gap-3">
-          <Droplets />
+          <CaretakerIcon />
           <p>Caretaker</p>
         </div>
         <div className="flex flex-row gap-3">
-          <Utensils />
+          <KitchenIcon />
           <p>Kitchen</p>
         </div>
         <div className="flex flex-row gap-3">
-          <Wifi />
+          <Wifi color="#3d53ad"/>
           <p>Wifi</p>
         </div>
       </div>
 
       <div className="flex mt-[20px] relative">
-        <Fab color="primary" aria-label="add" className="absolute z-1 top-0 right-0 ">
+        <Fab color="primary" aria-label="add" className="absolute z-0 top-0 right-0 ">
           <AddIcon />
         </Fab>
         <div className="flex flex-col">
