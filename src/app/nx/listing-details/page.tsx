@@ -44,7 +44,7 @@ const Page: React.FC<PageProps> = (props) => {
           alt="property picture" 
           className="w-[800px] h-[300px] self-center "
          />
-        <div className="bg-blue-200 h-[38.45px] w-[38.45px] absolute rounded-[100px] bottom-[50px] right-[40px] justify-center items-center">
+        <div className="bg-blue-200 flex h-[38.45px] w-[38.45px] absolute rounded-full bottom-[50px] right-[40px] justify-center items-center">
           <Images size={20} color="white" className="self-center"/>
         </div>
         <div className="bg-black h-[25.1px] w-[57.27px] absolute rounded-[100px] bottom-[50px] left-[30px] flex justify-center items-center">
@@ -166,7 +166,7 @@ const Page: React.FC<PageProps> = (props) => {
         </div>
       </div>
 
-      <div className="flex mt-[20px] relative">
+      <div className="flex mt-[20px] mb-11 relative">
         <Fab color="primary" aria-label="add" className="absolute z-0 top-0 right-0 ">
           <AddIcon />
         </Fab>
@@ -186,7 +186,7 @@ const Page: React.FC<PageProps> = (props) => {
         >SUBMIT YOUR QUESTIONS</button>
       </div>
 
-      <div className="flex px-8 flex-col fixed -bottom-5 left-0 right-3 my-20 rounded-[7px] w-full h-[90px] ">
+      <div className="flex px-8 flex-col fixed -bottom-5 left-0 right-3 mb-20 rounded-[7px] w-full h-[90px] ">
         <div className="flex items-center justify-end mb-2">
           <Fab className="bg-green-400 mb-2">
             <WhatsappIcon/>
