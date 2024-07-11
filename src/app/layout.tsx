@@ -40,9 +40,9 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="h-full bg-white dark">
+    <html lang="en">
       <body
-        className={`h-full overflow-x-hidden ${poppins.className}`}
+        className={`min-h-screen h-fit overflow-x-hidden ${poppins.className}`}
         style={{
           background:
             "linear-gradient(121.56deg, #5D71BA 8.34%, #3B53AD 78.63%)",

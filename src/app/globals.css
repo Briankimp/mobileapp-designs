@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+.row-flex-justify-center {
+  @apply flex flex-row justify-center items-center;
+}
+
+.row-flex-justify-between {
+  @apply flex flex-row justify-between items-center;
+}
+
+.row-flex-justify-end {
+  @apply flex flex-row justify-end items-center;
+}
+
+.row-flex-justify-start {
+  @apply flex flex-row justify-start items-center;
+}
+
+.column-flex-items-start {
+  @apply flex flex-col justify-center items-start;
+}
+
+.column-flex-items-center {
+  @apply flex flex-col justify-center items-center;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

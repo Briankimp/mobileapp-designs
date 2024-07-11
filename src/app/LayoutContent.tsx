@@ -13,7 +13,7 @@ export default function LayoutContent({
   return (
     <>
       <ToastProvider>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col min-h-screen h-fit">
           <main className="">{children}</main>
           <Analytics />
         </div>

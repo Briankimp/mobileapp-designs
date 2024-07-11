@@ -1,149 +1,164 @@
 import React from "react";
 import { CalendarDays, MapPin, Wifi } from "lucide-react";
-import ImageCarousel from "@/components/ui/image-carousel";
-import { ChevronLeft, Cable, Droplets, Utensils, MessageSquareMore, Eye, Bath, Heart, Share2, UsersRound, Images, BedDouble } from "lucide-react";
-import Image from "next/image";
+import ImageCarousel from "@/components/ui/carousel/image-details-carousel";
+import {
+  ChevronLeft,
+  Utensils,
+  MessageSquareMore,
+  Eye,
+  Bath,
+  Heart,
+  UsersRound,
+  BedDouble,
+  PersonStanding,
+  Info,
+} from "lucide-react";
+import ShareIcon from "@mui/icons-material/Share";
+import PlaceIcon from "@mui/icons-material/Place";
 import { Divider } from "antd";
-import { Fab } from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
-import WhatsappIcon from "@/components/ui/WhatsappIcon";
-import CaretakerIcon from "@/components/ui/CaretakerIcon";
-import ElectricityIcon from "@/components/ui/ElectricityIcon";
-import WaterIcon from "@/components/ui/WaterIcon";
-import KitchenIcon from "@/components/ui/KitchenIcon";
-
+import WhatsappIcon from "@/assets/icons/WhatsappIcon";
+import CaretakerIcon from "@/assets/icons/CaretakerIcon";
+import ElectricityIcon from "@/assets/icons/ElectricityIcon";
+import WaterIcon from "@/assets/icons/WaterIcon";
+import KitchenIcon from "@/assets/icons/KitchenIcon";
+import { TnCButton } from "@/components/ui/button/button";
 
 interface PageProps {}
 
 const Page: React.FC<PageProps> = (props) => {
-  // random image urls
   const imageUrls = [
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914",
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be",
-    "https://images.unsplash.com/photo-1502136969935-8d47b6b02a3c",
-    "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
-    "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
-    "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
+    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
   ];
 
   return (
-    <main className="flex flex-col pt-11 px-8 w-full bg-white-100">
-      <div>
-        <ChevronLeft />
+    <main className="flex flex-col pt-11 px-8 w-full bg-white-100 relative">
+      <div className="w-fit">
+        <TnCButton variant="normal" className="p-0" customSize="icon">
+          <ChevronLeft className="sm:w-8 sm:h-8 text-black-100" />
+        </TnCButton>
       </div>
 
-      <div className=" flex items-center justify-end gap-2">
+      <div className="flex items-center justify-end gap-2">
         <CalendarDays size={24} className="text-blue-200" />
         <p className="text-sm text-black">05/06/2024</p>
       </div>
 
-      <div className="relative mt-10 justify-center items-center">
-        <img 
-          src="https://i.pinimg.com/236x/68/58/e0/6858e0446ac801dbdc950befd2efb8af.jpg" 
-          alt="property picture" 
-          className="w-[800px] h-[300px] self-center "
-         />
-        <div className="bg-blue-200 flex h-[38.45px] w-[38.45px] absolute rounded-full bottom-[50px] right-[40px] justify-center items-center">
-          <Images size={20} color="white" className="self-center"/>
-        </div>
-        <div className="bg-black h-[25.1px] w-[57.27px] absolute rounded-[100px] bottom-[50px] left-[30px] flex justify-center items-center">
-          <p className="text-white-100 self-center">1/10</p>
-        </div>
+      <div className="mt-5">
+        <ImageCarousel imageUrls={imageUrls} />
       </div>
 
-      <div className="flex flex-row justify-between mt-[20px]">
-        <h2 className="flex w-[217px] h-[38px] flex-wrap text-md font-semibold">Property Name in one line or maybe two</h2>
-        <button className="flex flex-row bg-blue-200 w-[133px] h-[34] items-center justify-center text-white-100 rounded-[4.32px]"><MessageSquareMore color="white" /> Message</button>
-      </div>
-
-      <div className="flex flex-row justify-between mt-[20px]">
-        <div className="flex flex-row gap-4">
-          <Eye />
-          <h4>1</h4>
+      <div className="column-flex-items-center w-full gap-5">
+        <div className="w-full row-flex-justify-between mt-[20px]">
+          <h2 className="text-base font-semibold">
+            Property Name in one line or maybe two
+          </h2>
+          <TnCButton variant="default">
+            <MessageSquareMore color="white" />
+            <span>Message</span>
+          </TnCButton>
         </div>
-        <div className="flex flex-row gap-5">
-          <div className="flex flex-row gap-2">
-            <p>8</p>
-            <Heart />
+
+        <div className="w-full row-flex-justify-end gap-4">
+          <div className="row-flex-justify-center gap-1">
+            <Eye />
+            <h4>1</h4>
           </div>
-          <Share2 color="#3d53ad"/>
+          <div className="row-flex-justify-center gap-1">
+            <div className="flex flex-row gap-2 cursor-pointer">
+              <Heart className="text-red-100" fill="#FFC1C1" />
+              <p>8</p>
+            </div>
+          </div>
+          <TnCButton variant="normal" className="p-0" customSize="icon">
+            <ShareIcon className="text-blue-200" />
+          </TnCButton>
+        </div>
+
+        <div className="w-full flex flex-row items-center justify-between">
+          <div className="flex flex-col items-center">
+            <p className="text-black-100/40 text-sm">Guest</p>
+            <div className="flex flex-row gap-2">
+              <UsersRound color="#3d53ad" />
+              <p>2</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <p className="text-black-100/40 text-sm">Bedroom</p>
+            <div className="flex flex-row gap-2">
+              <BedDouble color="#3d53ad" />
+              <p>2</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <p className="text-black-100/40 text-sm">Bed</p>
+            <div className="flex flex-row gap-2">
+              <BedDouble color="#3d53ad" />
+              <p>2</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <p className="text-black-100/40 text-sm">Bathroom</p>
+            <div className="flex flex-row gap-2">
+              <Bath color="#3d53ad" />
+              <p>2</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <p className="text-black-100/40 text-sm">Kitchen</p>
+            <div className="flex flex-row gap-2">
+              <Utensils color="#3d53ad" />
+              <p>2</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex flex-row items-center justify-between">
+          <div>
+            <p className="font-medium text-sm text-black-100/40">
+              Property Type
+            </p>
+            <p className="font-medium text-sm">Apartment</p>
+          </div>
+          <div>
+            <p className="font-medium text-sm text-black-100/40">
+              Uploaded By:
+            </p>
+            <p className="font-medium text-sm">Landlord&apos;s Name</p>
+          </div>
+          <TnCButton
+            variant="normal"
+            className="bg-green-100 rounded text-black-100 row-flex-justify-center gap-2 px-3 py-2"
+            customSize="icon"
+          >
+            <PlaceIcon />
+            Map
+          </TnCButton>
+        </div>
+        <div className="w-full flex flex-row items-center justify-start">
+          <MapPin />
+          <p>Address with house no., lane no.</p>
         </div>
       </div>
 
-      <div className="flex flex-row justify-between mt-[20px]">
-        <div className="flex flex-col">
-          <p className="text-gray-500">Guest</p>
-          <div className="flex flex-row gap-2">
-            <UsersRound color="#3d53ad"/>
-            <p>2</p>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-gray-500">Bedroom</p>
-          <div className="flex flex-row gap-2">
-            <BedDouble color="#3d53ad"/>
-            <p>2</p>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-gray-500">Bed</p>
-          <div className="flex flex-row gap-2">
-            <BedDouble color="#3d53ad"/>
-            <p>2</p>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-gray-500">Bathroom</p>
-          <div className="flex flex-row gap-2">
-          <Bath color="#3d53ad"/>
-            <p>2</p>
-          </div>
-        </div>
-        <div className="flex flex-col">
-          <p className="text-gray-500">Kitchen</p>
-          <div className="flex flex-row gap-2">
-            <Utensils color="#3d53ad"/>
-            <p>2</p>
-          </div>
-        </div>
+      <div className="my-[20px]">
+        <Divider className="h-[1px] bg-gray-400 text-opacity-0" />
       </div>
 
-      <div className="flex flex-row justify-between mt-[20px]">
-        <div>
-          <p className="font-medium text-xs text-gray-500 ">Property Type</p>
-          <p className="font-medium text-sm">Apartment</p>
-        </div>
-        <div>
-          <p className="font-medium text-xs text-gray-500 ">Uploaded By:</p>
-          <p className="font-medium text-sm">Landlord's Name</p>
-        </div>
-        <button className="flex rounded-[90px] flex-row bg-green-100 w-[133px] h-[34] items-center justify-center text-white gap-3 text-black">
-          <MapPin color="black"/>
-          Distance
-        </button>
-      </div>
-
-      <div className="flex flex-row justify-start mt-[20px]">
-        <MapPin/>
-        <p>Address with house no., lane no.</p>
-      </div>
-
-      <div className=" my-[20px]">
-        <Divider className="h-[1px] bg-gray-400 text-opacity-0"/>
-      </div>
-
-      <div className=" my-[20px]">
-        <p className="text-gray-500 text-sm font-normal">Description</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-           Totam sapiente ipsam nobis accusamus blanditiis, magni labore
-            aperiam voluptatibus, sit velit dignissimos 
-          veniam optio reprehenderit quidem iure impedit, ducimus quae cum?
+      <div className="">
+        <p className="text-black-100/40 text-sm font-normal">Description</p>
+        <p className="font-medium text-base">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
+          sapiente ipsam nobis accusamus blanditiis, magni labore aperiam
+          voluptatibus, sit velit dignissimos veniam optio reprehenderit quidem
+          iure impedit, ducimus quae cum?
         </p>
       </div>
 
-      <div className="flex flex-col justify-start items-start gap-6  my-[20px]">
-        <p className="text-gray-500 text-sm font-normal">Amenities</p>
+      <div className="grid grid-cols-3 gap-3 my-[20px]">
+        <p className="col-span-3 text-black-100/40 text-sm font-normal">
+          Amenities
+        </p>
         <div className="flex flex-row gap-3">
           <WaterIcon />
           <p>Water</p>
@@ -153,54 +168,68 @@ const Page: React.FC<PageProps> = (props) => {
           <p>Electricity</p>
         </div>
         <div className="flex flex-row gap-3">
-          <CaretakerIcon />
+          <PersonStanding color="#3d53ad" />
           <p>Caretaker</p>
+        </div>
+        <div className="flex flex-row gap-3">
+          <CaretakerIcon />
+          <p>Gateman</p>
         </div>
         <div className="flex flex-row gap-3">
           <KitchenIcon />
           <p>Kitchen</p>
         </div>
         <div className="flex flex-row gap-3">
-          <Wifi color="#3d53ad"/>
+          <Wifi color="#3d53ad" />
           <p>Wifi</p>
         </div>
       </div>
 
-      <div className="flex mt-[20px] mb-11 relative">
-        <Fab color="primary" aria-label="add" className="absolute z-0 top-0 right-0 ">
-          <AddIcon />
-        </Fab>
-        <div className="flex flex-col">
-          <p className="">You can add questions here:</p>
-          <input 
-            type="text" 
-            placeholder="Ask a question"
-            className="my-5 rounded-[4px] border-[1px] border-gray-300 px-[8px] w-[366px] h-[31px]"
-          />
-        </div>
-      </div>
-
-      <div className="flex justify-center items-center mb-44">
-        <button
-          className="bg-blue-200 w-[308px] h-[51px] text-white-100 rounded-[7px]"
-        >SUBMIT YOUR QUESTIONS</button>
-      </div>
-
-      <div className="flex px-8 flex-col fixed -bottom-5 left-0 right-3 mb-20 rounded-[7px] w-full h-[90px] ">
-        <div className="flex items-center justify-end mb-2">
-          <Fab className="bg-green-400 mb-2">
-            <WhatsappIcon/>
-          </Fab>
-        </div>
-        <div className="flex z-10 flex-row justify-between bg-white-100 w-full mt-4">
-          <div className="flex flex-col">
-            <p>$ xxxx</p>
-            <p>Excluding Taxes</p>
+      <div className="flex flex-col w-full items-center mt-5 gap-3 mb-[130px]">
+        <div className="w-full flex ">
+          <div className="w-full flex flex-col gap-2">
+            <div className="row-flex-justify-start">
+              <p className="text-lg">Ask a question </p>
+              <Info />
+            </div>
+            <input
+              type="text"
+              placeholder="Question goes here"
+              className="w-full p-3 rounded-[4px] border-[1px] border-gray-300
+            focus:outline-none focus:ring-1 focus:ring-blue-200 focus:border-blue-200"
+            />
           </div>
-          <button className="bg-blue-200 w-[189px] h-[51px] rounded-[7px] text-white-100">BOOK NOW</button>
         </div>
+        {/* <button className="bg-blue-200 w-[308px] h-[51px] text-white-100 rounded-[7px]"> */}
+        <TnCButton variant="default" className="py-4 px-5" customSize="icon">
+          SUBMIT YOUR QUESTION
+        </TnCButton>
+        {/* </button> */}
       </div>
 
+      <div className="w-[100%] flex bg-red-100 py-5 px-8 gap-5 absolute bottom-0 left-0 mb-5">
+        {/* <div className="flex items-center justify-end mb-2"></div> */}
+        <div className="flex flex-row justify-start w-full gap-4">
+          <div className="flex flex-col">
+            <p className="text-base sm:text-lg font-normal whitespace-nowrap">
+              Ksh 3000
+            </p>
+            <p className="text-lg sm:text-xl font-semibold">Deposit</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="text-base sm:text-lg font-normal whitespace-nowrap">
+              Ksh 3000
+            </p>
+            <p className="text-lg sm:text-xl font-semibold">Rent/Month</p>
+          </div>
+        </div>
+        {/* <button className="bg-blue-200 w-[189px] h-[51px] rounded-[7px] text-white-100">
+          BOOK NOW
+        </button> */}
+        <TnCButton variant="default" className="p-2 sm:p-3" customSize="icon">
+          BOOK NOW
+        </TnCButton>
+      </div>
     </main>
   );
 };

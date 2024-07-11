@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        grey:{
+        grey: {
           100: "#a6a6a6",
         },
         blue: {
@@ -17,11 +17,19 @@ const config: Config = {
           200: "#3B53AD",
           300: "#B5DBFF",
         },
+        black: {
+          100: "#000000",
+          900: "#1A1A1A",
+        },
+
         green: {
           100: "#BADAD7",
         },
         white: {
           100: "#FFFFFF",
+        },
+        red: {
+          100: "#FFC1C1",
         },
       },
       backgroundImage: {},
@@ -48,6 +56,18 @@ const config: Config = {
         xl: "1280px",
         "2xl": "1536px",
         "3xl": "1600px",
+      },
+      borderRadius: {
+        none: "0",
+        sm: "0.125rem", // 2px
+        DEFAULT: "0.25rem", // 4px
+        md: "0.375rem", // 6px
+        lg: "0.5rem", // 8px
+        xl: "0.75rem", // 12px
+        "2xl": "1rem", // 16px
+        "3xl": "1.5rem", // 24px
+        full: "9999px",
+        large: "12px", // 12px
       },
     },
   },
