@@ -30,6 +30,7 @@ const config: Config = {
         },
         red: {
           100: "#FFC1C1",
+          900: "#FF0000",
         },
       },
       backgroundImage: {},

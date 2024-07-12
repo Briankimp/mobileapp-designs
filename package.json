@@ -14,6 +14,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@headlessui/react": "^2.1.2",
+    "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.16.0",
@@ -31,6 +32,7 @@
     "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

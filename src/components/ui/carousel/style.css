@@ -17,7 +17,7 @@ button.slick-arrow::after {
   font-size: 16px !important;
   /* margin: 8px !important; */
   left: 40% !important;
-   top: 25% !important;
+  top: 25% !important;
   /* transform: translate(-50%, -50%) !important;   */
 }
 
@@ -28,3 +28,5 @@ ul.slick-dots.slick-dots-bottom li button {
   border-radius: 50% !important;
   margin: 0 5px !important;
 }
+
+

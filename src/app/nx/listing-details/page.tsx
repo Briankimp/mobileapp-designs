@@ -1,5 +1,5 @@
 import React from "react";
-import { CalendarDays, MapPin, Wifi } from "lucide-react";
+import { CalendarDays, Wifi } from "lucide-react";
 import ImageCarousel from "@/components/ui/carousel/image-details-carousel";
 import {
   ChevronLeft,
@@ -42,7 +42,7 @@ const Page: React.FC<PageProps> = (props) => {
 
       <div className="flex items-center justify-end gap-2">
         <CalendarDays size={24} className="text-blue-200" />
-        <p className="text-sm text-black">05/06/2024</p>
+        <p className="text-sm text-black-100">05/06/2024</p>
       </div>
 
       <div className="mt-5">
@@ -80,35 +80,35 @@ const Page: React.FC<PageProps> = (props) => {
           <div className="flex flex-col items-center">
             <p className="text-black-100/40 text-sm">Guest</p>
             <div className="flex flex-row gap-2">
-              <UsersRound color="#3d53ad" />
+              <UsersRound className="text-blue-200" />
               <p>2</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-black-100/40 text-sm">Bedroom</p>
             <div className="flex flex-row gap-2">
-              <BedDouble color="#3d53ad" />
+              <BedDouble className="text-blue-200" />
               <p>2</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-black-100/40 text-sm">Bed</p>
             <div className="flex flex-row gap-2">
-              <BedDouble color="#3d53ad" />
+              <BedDouble className="text-blue-200" />
               <p>2</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-black-100/40 text-sm">Bathroom</p>
             <div className="flex flex-row gap-2">
-              <Bath color="#3d53ad" />
+              <Bath className="text-blue-200" />
               <p>2</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-black-100/40 text-sm">Kitchen</p>
             <div className="flex flex-row gap-2">
-              <Utensils color="#3d53ad" />
+              <Utensils className="text-blue-200" />
               <p>2</p>
             </div>
           </div>
@@ -118,36 +118,38 @@ const Page: React.FC<PageProps> = (props) => {
             <p className="font-medium text-sm text-black-100/40">
               Property Type
             </p>
-            <p className="font-medium text-sm">Apartment</p>
+            <p className="font-medium text-sm text-black-100">Apartment</p>
           </div>
           <div>
             <p className="font-medium text-sm text-black-100/40">
               Uploaded By:
             </p>
-            <p className="font-medium text-sm">Landlord&apos;s Name</p>
+            <p className="font-medium text-sm text-black-100">
+              Landlord&apos;s Name
+            </p>
           </div>
           <TnCButton
             variant="normal"
             className="bg-green-100 rounded text-black-100 row-flex-justify-center gap-2 px-3 py-2"
             customSize="icon"
           >
-            <PlaceIcon />
+            <PlaceIcon className="h-6 w-6 text-blue-200" />
             Map
           </TnCButton>
         </div>
         <div className="w-full flex flex-row items-center justify-start">
-          <MapPin />
-          <p>Address with house no., lane no.</p>
+          <PlaceIcon className="h-6 w-6 text-black-100" />
+          <p className="font-medium text-base text-black-100">
+            Address with house no., lane no.
+          </p>
         </div>
       </div>
 
-      <div className="my-[20px]">
-        <Divider className="h-[1px] bg-gray-400 text-opacity-0" />
-      </div>
+      <Divider className="h-[1px] bg-gray-400 text-opacity-0" />
 
       <div className="">
         <p className="text-black-100/40 text-sm font-normal">Description</p>
-        <p className="font-medium text-base">
+        <p className="font-medium text-base text-black-100">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
           sapiente ipsam nobis accusamus blanditiis, magni labore aperiam
           voluptatibus, sit velit dignissimos veniam optio reprehenderit quidem
@@ -161,27 +163,27 @@ const Page: React.FC<PageProps> = (props) => {
         </p>
         <div className="flex flex-row gap-3">
           <WaterIcon />
-          <p>Water</p>
+          <p className="font-medium text-base text-black-100">Water</p>
         </div>
         <div className="flex flex-row gap-3">
           <ElectricityIcon />
-          <p>Electricity</p>
+          <p className="font-medium text-base text-black-100">Electricity</p>
         </div>
         <div className="flex flex-row gap-3">
           <PersonStanding color="#3d53ad" />
-          <p>Caretaker</p>
+          <p className="font-medium text-base text-black-100">Caretaker</p>
         </div>
         <div className="flex flex-row gap-3">
           <CaretakerIcon />
-          <p>Gateman</p>
+          <p className="font-medium text-base text-black-100">Gateman</p>
         </div>
         <div className="flex flex-row gap-3">
           <KitchenIcon />
-          <p>Kitchen</p>
+          <p className="font-medium text-base text-black-100">Kitchen</p>
         </div>
         <div className="flex flex-row gap-3">
           <Wifi color="#3d53ad" />
-          <p>Wifi</p>
+          <p className="font-medium text-base text-black-100">Wifi</p>
         </div>
       </div>
 
@@ -189,14 +191,14 @@ const Page: React.FC<PageProps> = (props) => {
         <div className="w-full flex ">
           <div className="w-full flex flex-col gap-2">
             <div className="row-flex-justify-start">
-              <p className="text-lg">Ask a question </p>
-              <Info />
+              <p className="text-lg text-black-100">Ask a question </p>
+              <Info className="text-black" />
             </div>
             <input
               type="text"
               placeholder="Question goes here"
               className="w-full p-3 rounded-[4px] border-[1px] border-gray-300
-            focus:outline-none focus:ring-1 focus:ring-blue-200 focus:border-blue-200"
+            focus:outline-none focus:ring-1 focus:ring-blue-200 focus:border-blue-200 text-black-100"
             />
           </div>
         </div>
@@ -226,7 +228,7 @@ const Page: React.FC<PageProps> = (props) => {
         {/* <button className="bg-blue-200 w-[189px] h-[51px] rounded-[7px] text-white-100">
           BOOK NOW
         </button> */}
-        <TnCButton variant="default" className="p-2 sm:p-3" customSize="icon">
+        <TnCButton variant="default" className="p-1 sm:p-2 w-40" customSize="icon">
           BOOK NOW
         </TnCButton>
       </div>
