@@ -1,46 +1,49 @@
 import React from 'react'
-import Image from 'next/image';
-import { FaMapMarkerAlt, FaDollarSign, FaEdit, FaTrashAlt } from 'react-icons/fa';
+import Image from 'next/image'
+import { DollarSign, MapPin } from 'lucide-react'
+import adImage from '../../nx/images/adimage.png' 
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
-const PropertyCard = () => {
+function ViewAd() {
   return (
-    <div className="flex items-center p-4 bg-white rounded shadow-lg">
-      <div className="relative w-24 h-24 flex-shrink-0">
-        <Image
-          src="public/viewads.png" 
-          alt="View Ad Image"
-          className="rounded"
-          layout="fill"
-          objectFit="cover"
-        />
-        <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></span>
-      </div>
-      <div className="ml-4 flex-grow">
-        <h3 className="text-lg font-semibold">Property Name</h3>
-        <div className="flex items-center text-gray-600">
-          <FaMapMarkerAlt className="mr-2" />
-          <span>Location</span>
+    <div>
+      <div className="flex items-center p-5 bg-white shadow-xl row-auto ">
+        <div className='relative flex h-24 w-24 flex-shrink-0 bg-white'>
+          <Image
+            src={adImage}
+            alt='Ad Image'
+            width={100}
+            height={100}
+            className='rounded'
+          />
+          <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></span>
         </div>
-        <div className="flex items-center text-gray-600 mt-1">
-          <FaDollarSign className="mr-2" />
-          <span>Price</span>
+        <div className='p-3 ml-4 flex-grow'>
+          <h1 className='text-lg text-black font-semibold'>Property Name in one or two lines</h1>
+          <div className='flex text-black-100 mt-2'>
+            <MapPin size={20} color="#3B53AD" strokeWidth={1.5} />
+            <span className='ml-3'>Address with house no, lane no</span>
+          </div>
+          <div className='flex items-center text-black-100 '>
+            <DollarSign size={20} color="#3B53AD" strokeWidth={2} />
+            <span className='ml-3'>Price</span>
+          </div>
+          <div className = 'items-end '>
+            <button className="p-2 text-black-900 ' hover:bg-blue-100 rounded">
+              <EditIcon sx={{color:'#3B53AD' }}/>
+              <span className='ml-2 ' >Edit</span>
+            </button>
+            <button className="p-2 hover:bg-red-100 rounded">
+                <DeleteIcon sx={{color:'#3B53AD' }} />
+                <span className=' text-grey-100 ' >Delete</span>
+            </button>
+          </div>         
         </div>
-      </div>
-      <div className="flex space-x-2">
-        <button className="p-2 text-blue-500 hover:bg-blue-100 rounded">
-          <FaEdit />
-        </button>
-        <button className="p-2 text-red-500 hover:bg-red-100 rounded">
-          <FaTrashAlt />
-        </button>
       </div>
     </div>
-  );
-};
-
-export default PropertyCard;
 
   )
 }
 
-export default ViewAds
+export default ViewAd
