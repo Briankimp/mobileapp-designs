@@ -6,47 +6,48 @@ import EditIcon from '@mui/icons-material/Edit';
 
 interface PropertyCardProps {
   PropertyName: string;
+  ImageSrc: string;
   Location: string;
   Price: number;
   PropertyType: string;
 }
 
-const PropertyCard: React.FC<PropertyCardProps> = ({PropertyName, Location, Price,PropertyType,}) => {
+const PropertyCard: React.FC<PropertyCardProps> = ({ImageSrc,PropertyName, Location, Price,PropertyType,}) => {
   return (
-    <div className= ''>
+    <div className= 'my-2'>
       <div className="flex items-center p-2 bg-white rounded">
-        <div className="relative w-24 h-24 flex-shrink-0">
+        <div className="relative w-30 h-30 flex-shrink-0 flex">
           <Image
-            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg"
+            src={ImageSrc}
             alt="Property"
             height={100}
             width={100}
             className="rounded"
           />
-          <span className="absolute bottom-0 right-0 bg-green-500  w-4 h-4 rounded-full border-2 border-white"></span>
+          <span className="absolute bottom-0 -right-2  bg-green-500  w-4 h-4 rounded-full border-4 border-white-100 "></span>
         </div>
         <div className="ml-4 flex-grow">
           <h3 className="text-lg font-semibold">{PropertyName}</h3>
-          <div className="flex items-center text-black-100">
-            <MapPin size={28} color="#3c2a98" absoluteStrokeWidth />
-            <span>{Location}</span>
+          <div className="flex items-center text-blue-200 ">
+            <MapPin size={17} absoluteStrokeWidth />
+            <span className='text-black-100'>{Location}</span>
           </div>
-          <div className="flex items-center text-black-100 mt-1">
-            <DollarSign size={28} color="#3c2a98" absoluteStrokeWidth />
+          <div className="flex items-center text-blue-200 text mt-1">
+            <DollarSign size={20} absoluteStrokeWidth />
             <span>{Price}</span>
           </div>
         </div>
       </div>
-      <div className="flex justify-between mt-1">
-        <h1 className='font-semibold items-center ' >{PropertyType}</h1>
-        <div className="flex space-x-2">
-          <button className="p-2 text-black-100 hover:bg-blue-100 rounded">
-            <EditIcon sx={{ color: '#3B53AD' }} />
-            <span>Edit</span>
+      <div className="flex justify-between mt-0">
+        <h1 className='font-semibold  items-center pl-2 ' >{PropertyType}</h1>
+        <div className="flex  items-center">
+          <button className="mr-3 hover:bg-blue-100 text-blue-200 rounded">
+            <EditIcon />
+            <span className='text-black-100'>Edit</span>
           </button>
-          <button className="p-2 text-grey-100 hover:bg-blue-100 rounded">
-            <DeleteIcon sx={{ color: '#3B53AD' }} />
-            <span>Delete</span>
+          <button className=" mr-3 hover:bg-blue-100 text-blue-200 rounded">
+            <DeleteIcon />
+            <span className='text-grey-100' >Delete</span>
           </button>
         </div>
       </div>
