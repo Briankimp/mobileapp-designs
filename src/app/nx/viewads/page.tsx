@@ -1,48 +1,56 @@
 import React from 'react'
-import Image from 'next/image'
-import { DollarSign, MapPin } from 'lucide-react'
-import adImage from '../../nx/images/adimage.png' 
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import Image, { StaticImageData } from 'next/image' 
+import PropertyCard from '../../../components/PropertyCard'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ListIcon from '@mui/icons-material/List';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+
+
+interface AdInfo {
+  id: number;
+  PropertyName: string;
+  Location: string;
+  Price: number;
+  PropertyType: string;
+}
 
 function ViewAd() {
-  return (
-    <div>
-      <div className="flex items-center p-5 bg-white shadow-xl row-auto ">
-        <div className='relative flex h-24 w-24 flex-shrink-0 bg-white'>
-          <Image
-            src={adImage}
-            alt='Ad Image'
-            width={100}
-            height={100}
-            className='rounded'
-          />
-          <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></span>
-        </div>
-        <div className='p-3 ml-4 flex-grow'>
-          <h1 className='text-lg text-black font-semibold'>Property Name in one or two lines</h1>
-          <div className='flex text-black-100 mt-2'>
-            <MapPin size={20} color="#3B53AD" strokeWidth={1.5} />
-            <span className='ml-3'>Address with house no, lane no</span>
-          </div>
-          <div className='flex items-center text-black-100 '>
-            <DollarSign size={20} color="#3B53AD" strokeWidth={2} />
-            <span className='ml-3'>Price</span>
-          </div>
-          <div className = 'items-end '>
-            <button className="p-2 text-black-900 ' hover:bg-blue-100 rounded">
-              <EditIcon sx={{color:'#3B53AD' }}/>
-              <span className='ml-2 ' >Edit</span>
-            </button>
-            <button className="p-2 hover:bg-red-100 rounded">
-                <DeleteIcon sx={{color:'#3B53AD' }} />
-                <span className=' text-grey-100 ' >Delete</span>
-            </button>
-          </div>         
-        </div>
-      </div>
-    </div>
+  const adsInfo: AdInfo[] = [
+    { id: 2,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+    { id: 3,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Houses' },
+    { id: 4,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Bungalows' },
+    { id: 5,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+    { id: 6,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Flats' },
+    { id: 7,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+    { id: 8,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+    { id: 9,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+    { id: 1,PropertyName: ' Ecclessia Flats Muranga Town Koinange', Location: "Murang'a Town Manyeki Road", Price: 20000, PropertyType: 'Villas' },
+  ]
 
+  return (
+    <div className='bg-white-100 p-4 m-3 '  >
+      <div className='flex  items-center justify-between ' >
+        <button>
+          <ArrowBackIosNewIcon sx={{color:'#3B53AD' }} />
+        </button>
+          <NotificationsIcon sx={{color:'#3B53AD' }}/>
+      </div>
+      <div className=' flex justify-between  mt-4' >
+        <h1>Ads ({adsInfo.length})</h1>
+        <ListIcon sx={{color:'#3B53AD' }} />
+      </div>
+    <div>
+      {adsInfo.map((info) => (
+        <PropertyCard
+          key={info.id}
+          PropertyName={info.PropertyName}
+          Location={info.Location}
+          Price={info.Price}
+          PropertyType={info.PropertyType}
+        />
+      ))}
+    </div>
+    </div>
   )
 }
 
